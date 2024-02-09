@@ -30,12 +30,28 @@ def initCards():
        deck.append(0)
     return deck
     
-def assignCard():
-    for 5:
-        rand.int
+def assignCard(cardDB, hand):
+    deal = False
+    while deal == False:
+        cardID = random.randrange(len(cardDB))
+        if cardDB[cardID] == 0:
+            deal =  True
+            cardDB[cardID] = hand
+        else:
+            cardID = random.randrange(len(cardDB))   
 
-def nameCards():
+def nameCards(i):
+    suit = i // 13
+    rank = i % 13
+    cardName = f"{RANKNAME[rank]}of {SUITNAME[suit]}"
+    pass
 
+def showDB(cardDB):
+    print(cardDB)
+    
+def showHand(cardDB, hand):
+        print(cardDB, hand)
+        
     
 def main():
     cardDB = initCards()
@@ -48,3 +64,5 @@ def main():
 
     showHand(cardDB, PLAYER)
     showHand(cardDB, COMPUTER)
+
+main()
